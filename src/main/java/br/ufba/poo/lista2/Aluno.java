@@ -16,7 +16,38 @@ package br.ufba.poo.lista2;
  */
 public class Aluno {
 
+    private String matricula;
+    private String nome;
+
     public Aluno(String matricula, String nome) {
+
+        this.matricula = matricula;
+        this.nome = nome;
+    }
+
+    public String getNome () {
+    return nome;
+    }
+
+    public void setNome (String n) {
+    nome = n;
+    }
+
+    public String getMatricula(){
+        return matricula;
+    }
+
+    public boolean equals(Object o) {
+
+        if (this == o) return true;
+
+        if (o == null || getClass() != o.getClass()) return false;
+        Aluno aluno = (Aluno) o;
+
+        return matricula != null ? matricula.equals(aluno.matricula) : aluno.matricula == null;
+    }
+    public int hashCode() {
+        return matricula != null ? matricula.hashCode() : 0;
     }
 }
 
